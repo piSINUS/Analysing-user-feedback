@@ -10,6 +10,10 @@ import matplotlib.pyplot as plt
 from transformers import BertTokenizer, TFBertForSequenceClassification
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score
+import numpy as np
+
 
 
 nltk.download('punkt')  # Для токенизации
@@ -83,7 +87,11 @@ common_words = word_freq.most_common(20)
 tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
 tokens = tokenizer(df["lemmatized_review"].tolist(),padding = True)
 
+# Преобразуем список эмбеддингов в numpy-массив
+X = np.stack(df["bert_embedding"].values)  # X = матрица BERT-векторов
+y = df["sentiment"]  # Целевая переменная (0 = негатив, 1 = позитив)
+
 # Разделение данных на обучающую и тестовую выборки:
 X_train, X_test, y_train, y_test = train_test_split(X, df["sentiment"], test_size=0.2, random_state=42)
-
-encoder
+print("Размер X_train:", X_train.shape)
+print("Размер X_test:", X_test.shape)
