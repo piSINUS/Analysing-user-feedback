@@ -46,3 +46,11 @@ y_pred = model.predict(X_test)
 
 # Оцениваем точность
 print("Accuracy:", accuracy_score(y_test, y_pred))
+
+#  Провекрка 
+new_reviews = ["I love this product!", "This is the worst experience ever."]
+X_new = vectorizer.transform(new_reviews)
+predictions = model.predict(X_new)
+
+for review, pred in zip(new_reviews, predictions):
+    print(f"Review: {review} -> Sentiment: {'Positive' if pred == 1 else 'Negative'}")
