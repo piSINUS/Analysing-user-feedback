@@ -7,8 +7,6 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 
 # Загружаем датасет
-# Замените 'dataset.csv' на свой файл
-# Датасет должен содержать колонку 'review_text'
 df = pd.read_csv("DisneylandReviews.csv")
 
 # Проверяем, есть ли нужная колонка
