@@ -21,5 +21,5 @@
 ✅ Готовая модель предсказывает позитивный/негативный отзыв
 ✅ Достигнута высокая точность (accuracy_score)
 
- Использовал этот датафрейм https://www.kaggle.com/datasets/arushchillar/disneyland-reviews
+ Использовал этот датасет https://www.kaggle.com/datasets/arushchillar/disneyland-reviews
  
